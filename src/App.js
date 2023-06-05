@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Counter from "./components/Counter";
+import VdoAi from "./components/VdoAi";
 
 function App() {
+  const [name,setName] = useState("Z1 Media")
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        <h1>Counter Component</h1>
+        <Counter />
+      </div>
+      <div>
+      </div>
+
+     <div className="flex col" >
+     <h1>{name ? "Z1 Tech" : "Z1 Media"}</h1>
+      <button onClick={()=>setName(!name)}>Change Name</button>
+     </div>
     </div>
   );
 }
